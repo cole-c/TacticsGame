@@ -9,7 +9,7 @@ public class MenuScript
     public static void AssignTileMaterial()
     {
         GameObject[] tiles = GameObject.FindGameObjectsWithTag("Tile");
-        Material material = Resources.Load<Material>("ToonTile");
+        Material material = Resources.Load<Material>("Tile");
 
         foreach (GameObject t in tiles)
         {

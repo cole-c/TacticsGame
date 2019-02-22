@@ -79,7 +79,7 @@ public class Tile : MonoBehaviour {
             if(tile != null && tile.walkable)
             {
                 RaycastHit hit;
-                if (!Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1)) //Checks if tile is occupied, do this better somehow later?
+                if (!Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1) || (tile == target)) //Checks if tile is occupied, do this better somehow later? Currently scenery cannot sit on top of tiles, etc. 
                 {
                     adjacencyList.Add(tile);
                 }
