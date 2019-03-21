@@ -19,6 +19,11 @@ public class PlayerMove : TacticsMove {
         Debug.DrawRay(transform.position, transform.forward);
         shouldMoveThisFrame = false;
 
+        if(!turn)
+        {
+            return;
+        }
+
         if(!moving)
         {
             FindSelectableTiles();

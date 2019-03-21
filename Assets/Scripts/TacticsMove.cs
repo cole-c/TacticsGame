@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TacticsMove : MonoBehaviour {
+public class TacticsMove : MonoBehaviour
+{
+    public bool turn = false;
 
     List<Tile> selectableTiles = new List<Tile>();
     GameObject[] tiles;
@@ -31,6 +33,8 @@ public class TacticsMove : MonoBehaviour {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
 
         halfHeight = GetComponent<Collider>().bounds.extents.y;
+
+        TurnManager.AddUnit(this);
     }
 
     public void GetCurrentTile()
@@ -151,6 +155,9 @@ public class TacticsMove : MonoBehaviour {
         {
             RemoveSelectableTiles();
             moving = false;
+
+            //TODO add combat/actions and end turn after that instead of movement
+            TurnManager.EndTurn();
         }
     }
 
@@ -282,5 +289,15 @@ public class TacticsMove : MonoBehaviour {
             velocity /= 5.0f;
             velocity.y = 1.5f;
         }
+    }
+
+    public void BeginTurn()
+    {
+        turn = true;
+    }
+
+    public void EndTurn()
+    {
+        turn = false;
     }
 }

@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\TacticsCamera.cs" />
     <Compile Include="Assets\Scripts\TacticsMove.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\TurnManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>B:/Unity_projects/Tactics/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
